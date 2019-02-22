@@ -1,0 +1,10 @@
+.myForm {
+    width: 60%;
+    margin: auto;
+    padding-bottom: 100px;
+    padding-top: 50px;
+}
+
+.mycontent {
+    float: right;
+}

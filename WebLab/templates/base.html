@@ -1,0 +1,100 @@
+{% extends "abstract.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block header %}
+    <header>
+        <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
+        <!--End top header -->
+
+        <nav class="navbar navbar-default ">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'assets/img/logo.png' %}" alt=""></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse yamm" id="navigation">
+                    {% if user.is_authenticated %}
+                        <div class="button navbar-right">
+                        <button class="navbar-btn nav-button wow fadeInRight" onclick=" window.open('{% url 'prof' %}')" data-wow-delay="0.5s">{{ user.username }}</button>
+                        </div>
+                    {% else %}
+                        <div class="button navbar-right">
+                            <button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('{% url 'login:login' %}')" data-wow-delay="0.4s">Login</button>
+                            <button class="navbar-btn nav-button wow fadeInRight" onclick=" window.open('{% url 'login:reg' %}')" data-wow-delay="0.5s">Register</button>
+                        </div>
+                    {% endif %}
+                    <ul class="main-nav nav navbar-nav navbar-right">
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="{% url 'index' %}">Home</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="{% url 'post:posts' %}">All Ads</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="{% url 'post:create' %}">Post Your Ad</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <!-- End of nav bar -->
+        <!-- End page header -->
+    </header>
+{% endblock %}
+
+{% block footer %}
+    <footer>
+            <div class="footer-area">
+
+            <div class=" footer">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+                            <div class="single-footer">
+                                <h4>About us </h4>
+                                <div class="footer-title-line"></div>
+                                <p>Lorem ipsum dolor cum necessitatibus su quisquam molestias. Vel unde, blanditiis.</p>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copy text-center">
+                <div class="container">
+                    <div class="row">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="{% static 'assets/js/modernizr-2.6.2.min.js' %}"></script>
+
+        <script src="{% static 'assets/js/jquery-1.10.2.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'assets/js/bootstrap-select.min.js' %}"></script>
+        <script src="{% static 'assets/js/bootstrap-hover-dropdown.js' %}"></script>
+
+        <script src="{% static 'assets/js/easypiechart.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.easypiechart.min.js' %}"></script>
+
+        <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'assets/js/wow.js' %}"></script>
+
+        <script src="{% static 'assets/js/icheck.min.js' %}"></script>
+        <script src="{% static 'assets/js/price-range.js' %}"></script>
+
+        <script src="{% static 'assets/js/main.js' %}"></script>
+    </footer>
+{% endblock %}
